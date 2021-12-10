@@ -1,4 +1,4 @@
-#CARD BOT
+# CARD BOT
 
 The bot draws 5 cards from a 52 card deck, checks if the hand of cards contains a pair, fullhouse, flush etc.,
 and generates a image of the result.
