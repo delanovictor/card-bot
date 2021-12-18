@@ -1,20 +1,31 @@
 {
   "name": "bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "The bot draws 5 cards from a 52 card deck, checks if the hand of cards contains a pair, fullhouse, flush etc.,\r and generates a image of the result.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "npm uninstall join-images && npm uninstall sharp && npm install --platform=linux --arch=x64 --target=12.14.1 sharp && npm install --platform=linux --arch=x64 --target=12.14.1 join-images",
+    "deploy": "serverless deploy -v",
+    "postdeploy": "npm uninstall join-images && npm uninstall sharp && npm install sharp && npm install join-images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delanovictor/card-bot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delanovictor/card-bot/issues"
+  },
+  "homepage": "https://github.com/delanovictor/card-bot#readme",
   "dependencies": {
-    "canvas": "^2.8.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "node-schedule": "^2.1.0",
-    "nodemailer": "^6.7.2",
-    "twit": "^2.2.11"
+    "join-images": "^1.0.0",
+    "sharp": "^0.29.3",
+    "twitter": "^1.7.1"
   }
 }
